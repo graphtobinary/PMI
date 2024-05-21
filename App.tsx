@@ -1,19 +1,14 @@
+import React from 'react';
 import {StyleSheet} from 'react-native';
 import Video, {FullscreenOrientationType, ResizeMode} from 'react-native-video';
-
-// Within your render function, assuming you have a file called
-// "background.mp4" in your project. You can include multiple videos
-// on a single screen if you like.
-
 const App = () => {
   const background = require('./TazaaTwist.mp4');
 
   return (
-    // eslint-disable-next-line react/react-in-jsx-scope
     <Video
       source={background}
       style={styles.backgroundVideo}
-      resizeMode={ResizeMode.COVER}
+      resizeMode={ResizeMode.CONTAIN}
       fullscreenOrientation={FullscreenOrientationType.LANDSCAPE}
     />
   );
@@ -28,6 +23,7 @@ var styles = StyleSheet.create({
     bottom: 0,
     right: 0,
     resizeMode: 'cover',
+    backgroundColor: '#000000',
   },
 });
 
